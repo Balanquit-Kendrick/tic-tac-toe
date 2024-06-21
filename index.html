@@ -31,23 +31,28 @@
 
       render() {
         return (
-          <div className="grid place-content-center rounded-sm mt-24 mb-4">
-            <div className="board-row">
-              {this.renderSquare(0)}
-              {this.renderSquare(1)}
-              {this.renderSquare(2)}
+            <div className="grid place-content-center content-center justify-center items-center rounded-sm mt-24 mb-4">
+              <div>
+                <h1 className="text-center font-bold text-5xl mb-4">Tic-Tac-Toe</h1>
+              </div>
+              <div className="grid place-content-center">
+              <div className="board-row">
+                {this.renderSquare(0)}
+                {this.renderSquare(1)}
+                {this.renderSquare(2)}
+              </div>
+              <div className="board-row">
+                {this.renderSquare(3)}
+                {this.renderSquare(4)}
+                {this.renderSquare(5)}
+              </div>
+              <div className="board-row">
+                {this.renderSquare(6)}
+                {this.renderSquare(7)}
+                {this.renderSquare(8)}
+              </div>
             </div>
-            <div className="board-row">
-              {this.renderSquare(3)}
-              {this.renderSquare(4)}
-              {this.renderSquare(5)}
             </div>
-            <div className="board-row">
-              {this.renderSquare(6)}
-              {this.renderSquare(7)}
-              {this.renderSquare(8)}
-            </div>
-          </div>
         );
       }
     }
@@ -99,9 +104,9 @@
 
           if(move==0){
             return (
-                <div className=" grid place-content-center border">
+                <div className=" grid place-content-center">
                 <li key={move}>
-                    <button className="bg-black content-center items-center justify-center text-white rounded-lg p-2 hover:bg-gray-500 hover:text-black font-bold" onClick={() => this.jumpTo(move)}>{start}</button>
+                    <button className="bg-black content-center items-center justify-center text-white rounded-lg p-2 hover:bg-gray-800  font-bold" onClick={() => this.jumpTo(move)}>{start}</button>
                 </li>
                 </div>
             );
@@ -127,12 +132,12 @@
                 onClick={(i) => this.handleClick(i)}
               />
             </div>
-            <div className="game-info border border-black ">
-              <div className="flex justify-center ">
-                <span>{status}</span>
+            <div className="game-info">
+              <div className="flex justify-center text-2xl font-bold">
+                <span className="mb-4">{status}</span>
                 <span className="text-red-800">{winner}</span>
             </div>
-              <ol className="hover:bg-gray-500 ">{moves}</ol>
+              <ol>{moves}</ol>
             </div>
           </div>
         );
